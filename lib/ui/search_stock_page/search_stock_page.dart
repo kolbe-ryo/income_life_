@@ -158,21 +158,10 @@ class _FloatingActionButton extends StatelessWidget {
       onPressed: () {
         return context.read<SearchStockPageViewModel>().switchCondition();
       },
-      child: FaIcon(
-        _iconData(searchCondition),
+      child: const FaIcon(
+        FontAwesomeIcons.arrowRotateRight,
         color: AppColors.white,
       ),
     );
-  }
-
-  IconData _iconData(AddedConditionEnum condition) {
-    switch (condition) {
-      case AddedConditionEnum.all:
-        return FontAwesomeIcons.circle;
-      case AddedConditionEnum.isAdded:
-        return FontAwesomeIcons.square;
-      case AddedConditionEnum.notAdded:
-        return FontAwesomeIcons.xmark;
-    }
   }
 }

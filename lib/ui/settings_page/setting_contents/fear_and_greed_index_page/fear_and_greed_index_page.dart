@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:income_life/ui/common/app_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -52,40 +53,60 @@ class FearAndGreedIndexPage extends StatelessWidget {
                             startValue: 0,
                             endValue: 25,
                             color: FearAndGreedIndexEnum.extremeFear.color,
-                            startWidth: 40,
-                            endWidth: 30,
+                            startWidth: 10,
+                            endWidth: 10,
                           ),
                           GaugeRange(
                             startValue: 25,
                             endValue: 45,
                             color: FearAndGreedIndexEnum.fear.color,
-                            startWidth: 30,
-                            endWidth: 20,
+                            startWidth: 10,
+                            endWidth: 10,
                           ),
                           GaugeRange(
                             startValue: 45,
                             endValue: 55,
                             color: FearAndGreedIndexEnum.neutral.color,
-                            startWidth: 20,
-                            endWidth: 20,
+                            startWidth: 10,
+                            endWidth: 10,
                           ),
                           GaugeRange(
                             startValue: 55,
                             endValue: 75,
                             color: FearAndGreedIndexEnum.greed.color,
-                            startWidth: 20,
-                            endWidth: 30,
+                            startWidth: 10,
+                            endWidth: 10,
                           ),
                           GaugeRange(
                             startValue: 75,
                             endValue: 100,
                             color: FearAndGreedIndexEnum.extremeGreed.color,
-                            startWidth: 30,
-                            endWidth: 40,
+                            startWidth: 10,
+                            endWidth: 10,
                           )
                         ],
                         pointers: <GaugePointer>[
-                          NeedlePointer(value: currentGauge),
+                          NeedlePointer(
+                            value: currentGauge,
+                            needleLength: 0.8,
+                            needleStartWidth: 2,
+                            needleEndWidth: 12,
+                            gradient: const LinearGradient(
+                              colors: <Color>[
+                                AppColors.black,
+                                AppColors.grey,
+                                AppColors.grey,
+                                AppColors.black,
+                              ],
+                              stops: <double>[0, 0.5, 0.5, 1],
+                            ),
+                            knobStyle: const KnobStyle(
+                              color: AppColors.white,
+                              knobRadius: 0.06,
+                              borderColor: AppColors.darkGrey,
+                              borderWidth: 0.05,
+                            ),
+                          ),
                         ],
                         annotations: <GaugeAnnotation>[
                           GaugeAnnotation(
@@ -105,6 +126,8 @@ class FearAndGreedIndexPage extends StatelessWidget {
                         showLabels: false,
                       ),
                     ],
+                    enableLoadingAnimation: true,
+                    animationDuration: 5000,
                     title: const GaugeTitle(
                       text: '',
                       textStyle: TextStyle(
