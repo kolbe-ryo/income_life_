@@ -159,7 +159,7 @@ class _FloatingActionButton extends StatelessWidget {
         return context.read<SearchStockPageViewModel>().switchCondition();
       },
       child: const FaIcon(
-        FontAwesomeIcons.arrowRotateRight,
+        FontAwesomeIcons.toggleOn,
         color: AppColors.white,
       ),
     );
