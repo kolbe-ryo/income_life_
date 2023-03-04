@@ -24,6 +24,7 @@ class AddPortfolioDialogDesign extends StatelessWidget {
           children: [
             const SizedBox(height: kPadding / 2),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(S.of(context).tickerName),
                 Expanded(
@@ -69,6 +70,7 @@ class AddPortfolioDialogDesign extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: kPadding),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(S.of(context).totalStocks),
                     Expanded(
@@ -81,7 +83,7 @@ class AddPortfolioDialogDesign extends StatelessWidget {
                 ),
               ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(S.of(context).adding),
                 const Expanded(
