@@ -40,7 +40,7 @@ class FearAndGreedIndexViewModel extends StateNotifier<FearAndGreedIndexState> w
       final context = GetIt.I<GlobalKey<NavigatorState>>().currentContext!;
       await NotificationToast.showToast(
         context: context,
-        message: S.of(context).noInternetConnection,
+        message: S.of(context).errorHasOccurred,
       );
       state = state.copyWith(isLoading: false);
     }
