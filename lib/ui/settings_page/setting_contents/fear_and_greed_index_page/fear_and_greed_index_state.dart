@@ -20,13 +20,13 @@ class FearAndGreedIndexState with _$FearAndGreedIndexState {
   const FearAndGreedIndexState._();
 
   Color get colorFromValue {
-    if (value <= 25.0) {
+    if (value < 25.0) {
       return FearAndGreedIndexEnum.extremeFear.color;
-    } else if (value <= 45.0) {
+    } else if (value < 45.0) {
       return FearAndGreedIndexEnum.fear.color;
-    } else if (value <= 55.0) {
+    } else if (value < 55.0) {
       return FearAndGreedIndexEnum.neutral.color;
-    } else if (value <= 75.0) {
+    } else if (value < 75.0) {
       return FearAndGreedIndexEnum.greed.color;
     } else {
       return FearAndGreedIndexEnum.extremeGreed.color;

@@ -14,7 +14,11 @@ const jsogSheetsCredentialsnKey = {
   'client_x509_cert_url': String.fromEnvironment('CLIENTX509CERTURL')
 };
 
+// ADMOB
 const admobBannerId = String.fromEnvironment('ADMOBBANNERID');
 const admobRewardId = String.fromEnvironment('ADMOBREWARDID');
+
+// FGI
+const fgiApiKey = String.fromEnvironment('FGIAPIKEY');
 
 const isRelease = bool.fromEnvironment('dart.vm.product');

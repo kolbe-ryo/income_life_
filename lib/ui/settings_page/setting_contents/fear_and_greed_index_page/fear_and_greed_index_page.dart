@@ -134,17 +134,30 @@ class FearAndGreedIndexPage extends StatelessWidget {
     required Color gaugeColor,
   }) {
     return GaugeAnnotation(
-      widget: Text(
-        '\n${currentGauge.toInt().toString()}\n\n$valueText',
-        style: TextStyle(
-          color: gaugeColor,
+      widget: DefaultTextStyle(
+        style: const TextStyle(
           fontSize: 40,
           fontWeight: FontWeight.bold,
         ),
-        textAlign: TextAlign.center,
+        child: Column(
+          children: [
+            Text(
+              currentGauge.toInt().toString(),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: kPadding * 3),
+            Text(
+              valueText,
+              style: TextStyle(
+                color: gaugeColor,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
       ),
       angle: 90,
-      positionFactor: 0.6,
+      positionFactor: 2,
     );
   }
 }

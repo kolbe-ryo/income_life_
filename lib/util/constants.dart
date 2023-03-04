@@ -14,6 +14,12 @@ const String aboutAppUrl = 'https://kolbe-app.site/';
 
 const String yahooFinanceUrl = 'https://finance.yahoo.com/';
 
+const String fgiApiKeyCaption = 'X-RapidAPI-Key';
+
+const String fgiHostCaption = 'X-RapidAPI-Host';
+
+const String fgiHostValue = 'fear-and-greed-index.p.rapidapi.com';
+
 const testModels = [
   GsheetsModel(
     market: CurrencyValue.usd,

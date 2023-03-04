@@ -4,9 +4,10 @@ import 'dart:io';
 
 // Package imports:
 import 'package:diox/diox.dart';
+import 'package:income_life/util/constants.dart';
+import 'package:income_life/util/flavor_text.dart';
 
 // Project imports:
-import '../../util/api_key.dart';
 import '../../util/logger.dart';
 
 class FearAndGreedDiox extends DioMixin {
@@ -37,8 +38,8 @@ class FearAndGreedDiox extends DioMixin {
         sendTimeout: const Duration(seconds: 10),
         receiveTimeout: const Duration(seconds: 10),
         headers: <String, dynamic>{
-          'X-RapidAPI-Key': xrapidAPIKey,
-          'X-RapidAPI-Host': 'fear-and-greed-index.p.rapidapi.com',
+          fgiApiKeyCaption: fgiApiKey,
+          fgiHostCaption: fgiHostValue,
         },
       );
       final response = await super.request<T>(
