@@ -4,10 +4,10 @@ import 'dart:io';
 
 // Package imports:
 import 'package:diox/diox.dart';
-import 'package:income_life/util/constants.dart';
-import 'package:income_life/util/flavor_text.dart';
 
 // Project imports:
+import '../../util/constants.dart';
+import '../../util/flavor_text.dart';
 import '../../util/logger.dart';
 
 class FearAndGreedDiox extends DioMixin {
