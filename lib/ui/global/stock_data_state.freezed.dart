@@ -20,6 +20,7 @@ mixin _$StockDataState {
   int get currentAddingStocks => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isSuccessFetch => throw _privateConstructorUsedError;
+  FearAndGreedIndexState? get fgiState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $StockDataStateCopyWith<StockDataState> get copyWith =>
@@ -36,7 +37,10 @@ abstract class $StockDataStateCopyWith<$Res> {
       {List<GsheetsModel> gsheets,
       int currentAddingStocks,
       bool isLoading,
-      bool isSuccessFetch});
+      bool isSuccessFetch,
+      FearAndGreedIndexState? fgiState});
+
+  $FearAndGreedIndexStateCopyWith<$Res>? get fgiState;
 }
 
 /// @nodoc
@@ -56,6 +60,7 @@ class _$StockDataStateCopyWithImpl<$Res, $Val extends StockDataState>
     Object? currentAddingStocks = null,
     Object? isLoading = null,
     Object? isSuccessFetch = null,
+    Object? fgiState = freezed,
   }) {
     return _then(_value.copyWith(
       gsheets: null == gsheets
@@ -74,7 +79,23 @@ class _$StockDataStateCopyWithImpl<$Res, $Val extends StockDataState>
           ? _value.isSuccessFetch
           : isSuccessFetch // ignore: cast_nullable_to_non_nullable
               as bool,
+      fgiState: freezed == fgiState
+          ? _value.fgiState
+          : fgiState // ignore: cast_nullable_to_non_nullable
+              as FearAndGreedIndexState?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FearAndGreedIndexStateCopyWith<$Res>? get fgiState {
+    if (_value.fgiState == null) {
+      return null;
+    }
+
+    return $FearAndGreedIndexStateCopyWith<$Res>(_value.fgiState!, (value) {
+      return _then(_value.copyWith(fgiState: value) as $Val);
+    });
   }
 }
 
@@ -90,7 +111,11 @@ abstract class _$$_StockDataStateCopyWith<$Res>
       {List<GsheetsModel> gsheets,
       int currentAddingStocks,
       bool isLoading,
-      bool isSuccessFetch});
+      bool isSuccessFetch,
+      FearAndGreedIndexState? fgiState});
+
+  @override
+  $FearAndGreedIndexStateCopyWith<$Res>? get fgiState;
 }
 
 /// @nodoc
@@ -108,6 +133,7 @@ class __$$_StockDataStateCopyWithImpl<$Res>
     Object? currentAddingStocks = null,
     Object? isLoading = null,
     Object? isSuccessFetch = null,
+    Object? fgiState = freezed,
   }) {
     return _then(_$_StockDataState(
       gsheets: null == gsheets
@@ -126,6 +152,10 @@ class __$$_StockDataStateCopyWithImpl<$Res>
           ? _value.isSuccessFetch
           : isSuccessFetch // ignore: cast_nullable_to_non_nullable
               as bool,
+      fgiState: freezed == fgiState
+          ? _value.fgiState
+          : fgiState // ignore: cast_nullable_to_non_nullable
+              as FearAndGreedIndexState?,
     ));
   }
 }
@@ -137,7 +167,8 @@ class _$_StockDataState extends _StockDataState {
       {final List<GsheetsModel> gsheets = const <GsheetsModel>[],
       this.currentAddingStocks = 0,
       this.isLoading = false,
-      this.isSuccessFetch = false})
+      this.isSuccessFetch = false,
+      this.fgiState})
       : _gsheets = gsheets,
         super._();
 
@@ -158,10 +189,12 @@ class _$_StockDataState extends _StockDataState {
   @override
   @JsonKey()
   final bool isSuccessFetch;
+  @override
+  final FearAndGreedIndexState? fgiState;
 
   @override
   String toString() {
-    return 'StockDataState(gsheets: $gsheets, currentAddingStocks: $currentAddingStocks, isLoading: $isLoading, isSuccessFetch: $isSuccessFetch)';
+    return 'StockDataState(gsheets: $gsheets, currentAddingStocks: $currentAddingStocks, isLoading: $isLoading, isSuccessFetch: $isSuccessFetch, fgiState: $fgiState)';
   }
 
   @override
@@ -175,7 +208,9 @@ class _$_StockDataState extends _StockDataState {
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isSuccessFetch, isSuccessFetch) ||
-                other.isSuccessFetch == isSuccessFetch));
+                other.isSuccessFetch == isSuccessFetch) &&
+            (identical(other.fgiState, fgiState) ||
+                other.fgiState == fgiState));
   }
 
   @override
@@ -184,7 +219,8 @@ class _$_StockDataState extends _StockDataState {
       const DeepCollectionEquality().hash(_gsheets),
       currentAddingStocks,
       isLoading,
-      isSuccessFetch);
+      isSuccessFetch,
+      fgiState);
 
   @JsonKey(ignore: true)
   @override
@@ -198,7 +234,8 @@ abstract class _StockDataState extends StockDataState {
       {final List<GsheetsModel> gsheets,
       final int currentAddingStocks,
       final bool isLoading,
-      final bool isSuccessFetch}) = _$_StockDataState;
+      final bool isSuccessFetch,
+      final FearAndGreedIndexState? fgiState}) = _$_StockDataState;
   const _StockDataState._() : super._();
 
   @override
@@ -209,6 +246,8 @@ abstract class _StockDataState extends StockDataState {
   bool get isLoading;
   @override
   bool get isSuccessFetch;
+  @override
+  FearAndGreedIndexState? get fgiState;
   @override
   @JsonKey(ignore: true)
   _$$_StockDataStateCopyWith<_$_StockDataState> get copyWith =>

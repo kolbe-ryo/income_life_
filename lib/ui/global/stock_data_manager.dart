@@ -23,6 +23,8 @@ class StockDataManager extends StateNotifier<StockDataState> with LocatorMixin {
 
   StockDataState get info => state;
 
+  set info(StockDataState updateState) => state = updateState;
+
   @override
   Future<void> initState() async {
     await reload();

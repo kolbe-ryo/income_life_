@@ -4,9 +4,9 @@ import 'dart:io';
 
 // Package imports:
 import 'package:diox/diox.dart';
-import 'package:income_life/util/api_key.dart';
 
 // Project imports:
+import '../../util/api_key.dart';
 import '../../util/logger.dart';
 
 class FearAndGreedDiox extends DioMixin {

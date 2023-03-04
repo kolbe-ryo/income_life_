@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:
 import '../../data/model/gsheets_model.dart';
+import '../settings_page/setting_contents/fear_and_greed_index_page/fear_and_greed_index_state.dart';
 
 part 'stock_data_state.freezed.dart';
 
@@ -13,6 +14,7 @@ class StockDataState with _$StockDataState {
     @Default(0) int currentAddingStocks,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccessFetch,
+    FearAndGreedIndexState? fgiState,
   }) = _StockDataState;
 
   const StockDataState._();
