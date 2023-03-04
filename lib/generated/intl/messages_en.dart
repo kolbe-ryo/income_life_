@@ -10,7 +10,6 @@
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
-// Package imports:
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
@@ -47,9 +46,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorHasOccurred": MessageLookupByLibrary.simpleMessage("Error has occurred"),
         "example": MessageLookupByLibrary.simpleMessage("Ex）10"),
         "fearAndGreed": MessageLookupByLibrary.simpleMessage("Fear & Greed Index"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Name:"),
         "heatMap": MessageLookupByLibrary.simpleMessage("Heat Map"),
         "income": MessageLookupByLibrary.simpleMessage("Income"),
         "incomePerYear": MessageLookupByLibrary.simpleMessage("Income per year"),
+        "jpName": MessageLookupByLibrary.simpleMessage("JP Name:"),
         "jpy": MessageLookupByLibrary.simpleMessage("¥"),
         "licenses": MessageLookupByLibrary.simpleMessage("Licenses"),
         "noData": MessageLookupByLibrary.simpleMessage("No Data"),

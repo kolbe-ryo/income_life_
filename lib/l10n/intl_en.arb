@@ -1,5 +1,7 @@
 {
     "tickerName": "Ticker:",
+    "fullName": "Name:",
+    "jpName": "JP Name:",
     "totalStocks": "Total:",
     "adding": "Adding:",
     "delete": "Delete",

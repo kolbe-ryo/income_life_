@@ -10,7 +10,6 @@
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
-// Package imports:
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
@@ -47,9 +46,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorHasOccurred": MessageLookupByLibrary.simpleMessage("データ取得中にエラーが発生しました"),
         "example": MessageLookupByLibrary.simpleMessage("例）10"),
         "fearAndGreed": MessageLookupByLibrary.simpleMessage("Fear & Greed Index"),
+        "fullName": MessageLookupByLibrary.simpleMessage("銘柄名："),
         "heatMap": MessageLookupByLibrary.simpleMessage("ヒートマップ"),
         "income": MessageLookupByLibrary.simpleMessage("収益"),
         "incomePerYear": MessageLookupByLibrary.simpleMessage("年間収益"),
+        "jpName": MessageLookupByLibrary.simpleMessage("和名："),
         "jpy": MessageLookupByLibrary.simpleMessage("¥"),
         "licenses": MessageLookupByLibrary.simpleMessage("ライセンス"),
         "noData": MessageLookupByLibrary.simpleMessage("データなし"),

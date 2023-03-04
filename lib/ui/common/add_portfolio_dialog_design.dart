@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:income_life/util/logger.dart';
 
 // Project imports:
 import '../../data/model/gsheets_model.dart';
@@ -14,6 +15,7 @@ class AddPortfolioDialogDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    logger.info(model.jpName);
     return Padding(
       padding: const EdgeInsets.only(top: kPadding / 2, left: kPadding),
       child: DefaultTextStyle(
@@ -32,9 +34,40 @@ class AddPortfolioDialogDesign extends StatelessWidget {
                 ),
               ],
             ),
-            if (model.isAddedPortfolio)
+            Padding(
+              padding: const EdgeInsets.only(top: kPadding / 2),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(S.of(context).fullName),
+                  Expanded(
+                    child: Text(
+                      model.name,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (model.jpName != '-')
               Padding(
                 padding: const EdgeInsets.only(top: kPadding / 2),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(S.of(context).jpName),
+                    Expanded(
+                      child: Text(
+                        model.jpName,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            if (model.isAddedPortfolio)
+              Padding(
+                padding: const EdgeInsets.only(top: kPadding),
                 child: Row(
                   children: [
                     Text(S.of(context).totalStocks),

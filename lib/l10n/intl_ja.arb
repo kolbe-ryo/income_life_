@@ -1,5 +1,7 @@
 {
     "tickerName": "ティッカー：",
+    "fullName": "銘柄名：",
+    "jpName": "和名：",
     "totalStocks": "合計：",
     "adding": "追加：",
     "delete": "削除",

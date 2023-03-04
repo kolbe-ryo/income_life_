@@ -1,12 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:intl/intl.dart';
-
-// Project imports:
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -61,6 +55,26 @@ class S {
     return Intl.message(
       'Ticker:',
       name: 'tickerName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name:`
+  String get fullName {
+    return Intl.message(
+      'Name:',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `JP Name:`
+  String get jpName {
+    return Intl.message(
+      'JP Name:',
+      name: 'jpName',
       desc: '',
       args: [],
     );
