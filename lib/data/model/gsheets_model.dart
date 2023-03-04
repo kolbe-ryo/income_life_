@@ -13,6 +13,7 @@ class GsheetsModel with _$GsheetsModel {
     @Default(CurrencyValue.usd) CurrencyValue market,
     @Default('') String ticker,
     @Default('') String name,
+    @Default('') String jpName,
     @Default(0.0) double price,
     @Default(0.0) double dividend,
     @Default(false) bool isAddedPortfolio,

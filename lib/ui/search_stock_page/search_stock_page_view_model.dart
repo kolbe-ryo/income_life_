@@ -83,7 +83,10 @@ class SearchStockPageViewModel extends StateNotifier<SearchStockPageState> with 
       } else {
         final searchedModels = models
             .where(
-              (e) => e.name.toLowerCase().contains(text) || e.ticker.toLowerCase().contains(text),
+              (e) =>
+                  e.name.toLowerCase().contains(text) ||
+                  e.ticker.toLowerCase().contains(text) ||
+                  e.jpName.contains(text),
             )
             .toList();
         state = state.copyWith(searchedGsheets: searchedModels, isSearching: true);

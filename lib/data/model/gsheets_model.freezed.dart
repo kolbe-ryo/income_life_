@@ -23,6 +23,7 @@ mixin _$GsheetsModel {
   CurrencyValue get market => throw _privateConstructorUsedError;
   String get ticker => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get jpName => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   double get dividend => throw _privateConstructorUsedError;
   bool get isAddedPortfolio => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $GsheetsModelCopyWith<$Res> {
       {CurrencyValue market,
       String ticker,
       String name,
+      String jpName,
       double price,
       double dividend,
       bool isAddedPortfolio,
@@ -68,6 +70,7 @@ class _$GsheetsModelCopyWithImpl<$Res, $Val extends GsheetsModel>
     Object? market = null,
     Object? ticker = null,
     Object? name = null,
+    Object? jpName = null,
     Object? price = null,
     Object? dividend = null,
     Object? isAddedPortfolio = null,
@@ -86,6 +89,10 @@ class _$GsheetsModelCopyWithImpl<$Res, $Val extends GsheetsModel>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      jpName: null == jpName
+          ? _value.jpName
+          : jpName // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -123,6 +130,7 @@ abstract class _$$_GsheetsModelCopyWith<$Res>
       {CurrencyValue market,
       String ticker,
       String name,
+      String jpName,
       double price,
       double dividend,
       bool isAddedPortfolio,
@@ -144,6 +152,7 @@ class __$$_GsheetsModelCopyWithImpl<$Res>
     Object? market = null,
     Object? ticker = null,
     Object? name = null,
+    Object? jpName = null,
     Object? price = null,
     Object? dividend = null,
     Object? isAddedPortfolio = null,
@@ -162,6 +171,10 @@ class __$$_GsheetsModelCopyWithImpl<$Res>
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      jpName: null == jpName
+          ? _value.jpName
+          : jpName // ignore: cast_nullable_to_non_nullable
               as String,
       price: null == price
           ? _value.price
@@ -194,6 +207,7 @@ class _$_GsheetsModel extends _GsheetsModel {
       {this.market = CurrencyValue.usd,
       this.ticker = '',
       this.name = '',
+      this.jpName = '',
       this.price = 0.0,
       this.dividend = 0.0,
       this.isAddedPortfolio = false,
@@ -215,6 +229,9 @@ class _$_GsheetsModel extends _GsheetsModel {
   final String name;
   @override
   @JsonKey()
+  final String jpName;
+  @override
+  @JsonKey()
   final double price;
   @override
   @JsonKey()
@@ -231,7 +248,7 @@ class _$_GsheetsModel extends _GsheetsModel {
 
   @override
   String toString() {
-    return 'GsheetsModel(market: $market, ticker: $ticker, name: $name, price: $price, dividend: $dividend, isAddedPortfolio: $isAddedPortfolio, totalStocks: $totalStocks, exchangeRate: $exchangeRate)';
+    return 'GsheetsModel(market: $market, ticker: $ticker, name: $name, jpName: $jpName, price: $price, dividend: $dividend, isAddedPortfolio: $isAddedPortfolio, totalStocks: $totalStocks, exchangeRate: $exchangeRate)';
   }
 
   @override
@@ -242,6 +259,7 @@ class _$_GsheetsModel extends _GsheetsModel {
             (identical(other.market, market) || other.market == market) &&
             (identical(other.ticker, ticker) || other.ticker == ticker) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.jpName, jpName) || other.jpName == jpName) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.dividend, dividend) ||
                 other.dividend == dividend) &&
@@ -255,8 +273,8 @@ class _$_GsheetsModel extends _GsheetsModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, market, ticker, name, price,
-      dividend, isAddedPortfolio, totalStocks, exchangeRate);
+  int get hashCode => Object.hash(runtimeType, market, ticker, name, jpName,
+      price, dividend, isAddedPortfolio, totalStocks, exchangeRate);
 
   @JsonKey(ignore: true)
   @override
@@ -277,6 +295,7 @@ abstract class _GsheetsModel extends GsheetsModel {
       {final CurrencyValue market,
       final String ticker,
       final String name,
+      final String jpName,
       final double price,
       final double dividend,
       final bool isAddedPortfolio,
@@ -293,6 +312,8 @@ abstract class _GsheetsModel extends GsheetsModel {
   String get ticker;
   @override
   String get name;
+  @override
+  String get jpName;
   @override
   double get price;
   @override

@@ -27,7 +27,7 @@ class GsheetsDao implements GsheetsInterface {
     try {
       final sheets = await _gsheets.spreadsheet(gSheetsId);
       final sheet = sheets.worksheetByTitle('data');
-      final allData = await sheet!.values.allRows(fromRow: 2, length: 5);
+      final allData = await sheet!.values.allRows(fromRow: 2, length: 6);
       final exchangeRate = await fetchExchangeRate();
 
       return allData
@@ -38,6 +38,7 @@ class GsheetsDao implements GsheetsInterface {
               name: row[2],
               price: double.parse(row[3]),
               dividend: double.parse(row[4]),
+              jpName: row[5],
               exchangeRate: exchangeRate,
             ),
           )
