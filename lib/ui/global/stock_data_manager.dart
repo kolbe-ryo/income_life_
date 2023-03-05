@@ -132,6 +132,8 @@ class StockDataManager extends StateNotifier<StockDataState> with LocatorMixin {
           // Update all except isAddedPortfolio and totalStocks
           // replace fetch model to local portfolio
           models.last = localModel.copyWith(
+            name: model.name,
+            jpName: model.jpName,
             price: model.price,
             dividend: model.dividend,
             exchangeRate: model.exchangeRate,
