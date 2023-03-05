@@ -45,57 +45,75 @@ class FearAndGreedIndexPage extends StatelessWidget {
           child: Center(
             child: isLoading
                 ? const CupertinoActivityIndicator(radius: 24)
-                : SfRadialGauge(
-                    axes: [
-                      RadialAxis(
-                        ranges: [
-                          GaugeRange(
-                            startValue: 0,
-                            endValue: 25,
-                            color: FearAndGreedIndexEnum.extremeFear.color,
+                : DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SfRadialGauge(
+                          axes: [
+                            RadialAxis(
+                              ranges: [
+                                GaugeRange(
+                                  startValue: 0,
+                                  endValue: 25,
+                                  color: FearAndGreedIndexEnum.extremeFear.color,
+                                ),
+                                GaugeRange(
+                                  startValue: 25,
+                                  endValue: 45,
+                                  color: FearAndGreedIndexEnum.fear.color,
+                                ),
+                                GaugeRange(
+                                  startValue: 45,
+                                  endValue: 55,
+                                  color: FearAndGreedIndexEnum.neutral.color,
+                                ),
+                                GaugeRange(
+                                  startValue: 55,
+                                  endValue: 75,
+                                  color: FearAndGreedIndexEnum.greed.color,
+                                ),
+                                GaugeRange(
+                                  startValue: 75,
+                                  endValue: 100,
+                                  color: FearAndGreedIndexEnum.extremeGreed.color,
+                                )
+                              ],
+                              pointers: [
+                                _gaugePointer(currentGauge),
+                              ],
+                              annotations: [
+                                _gaugeAnnotation(
+                                  currentGauge: currentGauge,
+                                  valueText: valueText,
+                                  gaugeColor: gaugeColor,
+                                ),
+                              ],
+                              showLabels: false,
+                            ),
+                          ],
+                          enableLoadingAnimation: true,
+                          animationDuration: 3000,
+                          title: const GaugeTitle(
+                            text: '',
+                            textStyle: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          GaugeRange(
-                            startValue: 25,
-                            endValue: 45,
-                            color: FearAndGreedIndexEnum.fear.color,
+                        ),
+                        Text(
+                          valueText,
+                          style: TextStyle(
+                            color: gaugeColor,
                           ),
-                          GaugeRange(
-                            startValue: 45,
-                            endValue: 55,
-                            color: FearAndGreedIndexEnum.neutral.color,
-                          ),
-                          GaugeRange(
-                            startValue: 55,
-                            endValue: 75,
-                            color: FearAndGreedIndexEnum.greed.color,
-                          ),
-                          GaugeRange(
-                            startValue: 75,
-                            endValue: 100,
-                            color: FearAndGreedIndexEnum.extremeGreed.color,
-                          )
-                        ],
-                        pointers: [
-                          _gaugePointer(currentGauge),
-                        ],
-                        annotations: [
-                          _gaugeAnnotation(
-                            currentGauge: currentGauge,
-                            valueText: valueText,
-                            gaugeColor: gaugeColor,
-                          ),
-                        ],
-                        showLabels: false,
-                      ),
-                    ],
-                    enableLoadingAnimation: true,
-                    animationDuration: 3000,
-                    title: const GaugeTitle(
-                      text: '',
-                      textStyle: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
                     ),
                   ),
           ),
@@ -134,30 +152,12 @@ class FearAndGreedIndexPage extends StatelessWidget {
     required Color gaugeColor,
   }) {
     return GaugeAnnotation(
-      widget: DefaultTextStyle(
-        style: const TextStyle(
-          fontSize: 40,
-          fontWeight: FontWeight.bold,
-        ),
-        child: Column(
-          children: [
-            Text(
-              currentGauge.toInt().toString(),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: kPadding * 3),
-            Text(
-              valueText,
-              style: TextStyle(
-                color: gaugeColor,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
+      widget: Text(
+        currentGauge.toInt().toString(),
+        textAlign: TextAlign.center,
       ),
       angle: 90,
-      positionFactor: 2,
+      positionFactor: 0.5,
     );
   }
 }
