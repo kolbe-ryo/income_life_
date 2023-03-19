@@ -6,6 +6,7 @@ environment:
   sdk: '>=2.18.4 <3.0.0'
 
 dependencies:
+  app_review: ^2.1.2+1
   cupertino_icons: ^1.0.2
   diox: ^5.0.0
   flutter:
@@ -28,7 +29,7 @@ dependencies:
   json_serializable: ^6.5.4
   pie_chart: ^5.3.2
   provider: ^6.0.4
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.0.18
   simple_logger: ^1.9.0+1
   state_notifier: ^0.7.2+1
   syncfusion_flutter_gauges: ^20.4.51

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
+import 'package:app_review/app_review.dart';
 import 'package:get_it/get_it.dart';
 import 'package:state_notifier/state_notifier.dart';
 
@@ -12,6 +13,7 @@ import '../../enum/chart_theme_enum.dart';
 import '../../enum/color_index_enum.dart';
 import '../../enum/currency_value.dart';
 import '../../util/admob/admob_banner.dart';
+import '../../util/logger.dart';
 import 'top_page_state.dart';
 
 class TopPageViewModel extends StateNotifier<TopPageState> with LocatorMixin {
@@ -27,6 +29,7 @@ class TopPageViewModel extends StateNotifier<TopPageState> with LocatorMixin {
 
   @override
   void initState() {
+    _appReview();
     _navigatorKeys = <BnbItems, GlobalKey<NavigatorState>>{
       BnbItems.income: GlobalKey<NavigatorState>(),
       BnbItems.search: GlobalKey<NavigatorState>(),
@@ -35,6 +38,17 @@ class TopPageViewModel extends StateNotifier<TopPageState> with LocatorMixin {
     _admobBanner = GetIt.I<AdmobBanner>().getBannerWidget();
     _fetchThemeFromLocal();
     super.initState();
+  }
+
+  /// This method is used to trigger the app review prompt after the app has been
+  /// used 10 times.
+  Future<void> _appReview() async {
+    final useAppCount = await GetIt.I<LocalRepositoryInterface>().getAppReviewCompletedCount();
+    if (useAppCount == 4) {
+      await AppReview.requestReview.then(logger.info);
+      return;
+    }
+    await GetIt.I<LocalRepositoryInterface>().setAppReviewCompletedCount(useAppCount + 1);
   }
 
   Future<void> _fetchThemeFromLocal() async {

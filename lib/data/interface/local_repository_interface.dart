@@ -14,6 +14,8 @@ abstract class LocalRepositoryInterface {
 
   Future<CurrencyValue?> getLocalCurrencyValue();
 
+  Future<int> getAppReviewCompletedCount();
+
   // save data to local repository
   Future<void> saveModel(List<GsheetsModel> list);
 
@@ -24,4 +26,6 @@ abstract class LocalRepositoryInterface {
   Future<void> saveCurrencyValue(CurrencyValue value);
 
   Future<void> deleteAll();
+
+  Future<void> setAppReviewCompletedCount(int value);
 }

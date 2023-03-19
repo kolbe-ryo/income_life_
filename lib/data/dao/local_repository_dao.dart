@@ -31,6 +31,8 @@ class LocalRepositoryDao implements LocalRepositoryInterface {
 
   static const kCurrencyValueKey = 'currencyValue';
 
+  static const kAppReview = 'appReviewCount';
+
   @override
   Future<List<GsheetsModel>> getLocalModel() async {
     final storage = await _storage;
@@ -75,6 +77,13 @@ class LocalRepositoryDao implements LocalRepositoryInterface {
   }
 
   @override
+  Future<int> getAppReviewCompletedCount() async {
+    final storage = await _storage;
+    final appReview = storage.getInt(kAppReview);
+    return appReview ?? 0;
+  }
+
+  @override
   Future<void> saveModel(List<GsheetsModel> list) async {
     final storage = await _storage;
 
@@ -106,5 +115,11 @@ class LocalRepositoryDao implements LocalRepositoryInterface {
     final storage = await _storage;
     final delete = await storage.clear();
     logger.info(delete);
+  }
+
+  @override
+  Future<void> setAppReviewCompletedCount(int value) async {
+    final storage = await _storage;
+    await storage.setInt(kAppReview, value);
   }
 }
