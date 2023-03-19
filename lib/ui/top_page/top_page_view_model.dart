@@ -44,7 +44,7 @@ class TopPageViewModel extends StateNotifier<TopPageState> with LocatorMixin {
   /// used 10 times.
   Future<void> _appReview() async {
     final useAppCount = await GetIt.I<LocalRepositoryInterface>().getAppReviewCompletedCount();
-    if (useAppCount == 4) {
+    if (useAppCount == 10) {
       await AppReview.requestReview.then(logger.info);
       return;
     }
