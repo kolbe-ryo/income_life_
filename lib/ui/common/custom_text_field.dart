@@ -62,14 +62,14 @@ class DigitsTextField extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-        padding: const EdgeInsets.symmetric(horizontal: kPadding),
+        padding: EdgeInsets.zero,
         placeholder: S.of(context).example,
-        textAlign: TextAlign.center,
         keyboardType: TextInputType.number,
         style: const TextStyle(
           color: AppColors.lightGrey70,
-          fontSize: 18,
+          fontSize: kFontSize,
         ),
+        textAlignVertical: TextAlignVertical.top,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return S.of(context).alertTextNotEmpty;

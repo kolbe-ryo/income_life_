@@ -20,80 +20,54 @@ class AddPortfolioDialogDesign extends StatelessWidget {
       padding: const EdgeInsets.only(top: kPadding / 2, left: kPadding),
       child: DefaultTextStyle(
         style: const TextStyle(fontSize: kFontSize),
-        child: Column(
+        child: Table(
           children: [
-            const SizedBox(height: kPadding / 2),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(S.of(context).tickerName),
-                Expanded(
-                  child: Text(
-                    model.ticker,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+            _tableRow(
+              label: S.of(context).tickerName,
+              content: model.ticker,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: kPadding / 2),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(S.of(context).fullName),
-                  Expanded(
-                    child: Text(
-                      model.name,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
+            _tableRow(
+              label: S.of(context).fullName,
+              content: model.name,
             ),
             if (model.jpName != '-')
-              Padding(
-                padding: const EdgeInsets.only(top: kPadding / 2),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(S.of(context).jpName),
-                    Expanded(
-                      child: Text(
-                        model.jpName,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
+              _tableRow(
+                label: S.of(context).jpName,
+                content: model.jpName,
               ),
             if (model.isAddedPortfolio)
-              Padding(
-                padding: const EdgeInsets.only(top: kPadding),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(S.of(context).totalStocks),
-                    Expanded(
-                      child: Text(
-                        model.totalStocks.toString(),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
+              _tableRow(
+                label: S.of(context).totalStocks,
+                content: model.totalStocks.toString(),
+              ),
+            _tableRow(
+              label: SizedBox(
+                height: 36,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(S.of(context).adding),
                 ),
               ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(S.of(context).adding),
-                const Expanded(
-                  child: DigitsTextField(),
-                ),
-              ],
+              content: const DigitsTextField(),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  TableRow _tableRow<E, T>({required E label, required T content}) {
+    return TableRow(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: kPadding),
+          child: (label is String) ? Text(label) : label as Widget,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: kPadding),
+          child: (content is String) ? Text(content) : content as Widget,
+        ),
+      ],
     );
   }
 }
