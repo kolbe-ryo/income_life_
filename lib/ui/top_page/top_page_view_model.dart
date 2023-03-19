@@ -46,7 +46,6 @@ class TopPageViewModel extends StateNotifier<TopPageState> with LocatorMixin {
     final useAppCount = await GetIt.I<LocalRepositoryInterface>().getAppReviewCompletedCount();
     if (useAppCount == 10) {
       await AppReview.requestReview.then(logger.info);
-      return;
     }
     await GetIt.I<LocalRepositoryInterface>().setAppReviewCompletedCount(useAppCount + 1);
   }
