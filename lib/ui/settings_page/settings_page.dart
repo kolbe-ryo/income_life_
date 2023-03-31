@@ -81,22 +81,23 @@ class SettingsPage extends StatelessWidget {
                   final admobRewardState = context.read<AdmobRewardPageState>();
                   final admobRewardViewModel = context.read<AdmobRewardPageViewModel>();
 
-                  // Check display
-                  final isConfirmAdmobDisplay = await baseShowDialog(
-                        context: context,
-                        title: S.of(context).checkAdmobDisplay,
-                        widget: Padding(
-                          padding: const EdgeInsets.only(top: kPadding),
-                          child: Text(S.of(context).checkAdmobDisplayDetails),
-                        ),
-                        isSimpleDialog: true,
-                      ) ??
-                      false;
-                  if (!isConfirmAdmobDisplay) {
-                    return;
-                  }
                   // AdmobReward
                   if (admobRewardState.isLoaded && admobRewardState.rewardCount == 0) {
+                    // Check display
+                    final isConfirmAdmobDisplay = await baseShowDialog(
+                          context: context,
+                          title: S.of(context).checkAdmobDisplay,
+                          widget: Padding(
+                            padding: const EdgeInsets.only(top: kPadding),
+                            child: Text(S.of(context).checkAdmobDisplayDetails),
+                          ),
+                          isSimpleDialog: true,
+                        ) ??
+                        false;
+                    if (!isConfirmAdmobDisplay) {
+                      return;
+                    }
+
                     // Play Reward
                     await admobRewardViewModel.showRewardAd(
                       () {

@@ -37,25 +37,24 @@ class StockInformationCard extends BaseCard {
   @override
   void Function()? onTap(BuildContext context) {
     return () async {
-      // Check display
-      final isConfirmAdmobDisplay = await baseShowDialog(
-            context: context,
-            title: S.of(context).checkAdmobDisplay,
-            widget: Padding(
-              padding: const EdgeInsets.only(top: kPadding),
-              child: Text(S.of(context).checkAdmobDisplayDetails),
-            ),
-            isSimpleDialog: true,
-          ) ??
-          false;
-      if (!isConfirmAdmobDisplay) {
-        return;
-      }
-
       // AdmobReward
       final admobRewardState = context.read<AdmobRewardPageState>();
       final admobRewardViewModel = context.read<AdmobRewardPageViewModel>();
       if (admobRewardState.isLoaded && admobRewardState.rewardCount == 0) {
+        // Check display
+        final isConfirmAdmobDisplay = await baseShowDialog(
+              context: context,
+              title: S.of(context).checkAdmobDisplay,
+              widget: Padding(
+                padding: const EdgeInsets.only(top: kPadding),
+                child: Text(S.of(context).checkAdmobDisplayDetails),
+              ),
+              isSimpleDialog: true,
+            ) ??
+            false;
+        if (!isConfirmAdmobDisplay) {
+          return;
+        }
         // Play Reward
         await admobRewardViewModel.showRewardAd(
           () async {
