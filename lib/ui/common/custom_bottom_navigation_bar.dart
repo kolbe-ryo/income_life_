@@ -14,22 +14,24 @@ class CustomBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageIndex = context.select((TopPageState value) => value.pageIndex);
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        FutureBuilder(
-          future: context.read<TopPageViewModel>().admobBanner,
-          builder: (context, AsyncSnapshot<Widget> snapshot) {
-            if (snapshot.hasData) {
-              return snapshot.data!;
-            } else if (snapshot.hasError) {
-              // Something to do
-            }
-            return const CircularProgressIndicator();
-          },
-        ),
+        if (pageIndex != 2)
+          FutureBuilder(
+            future: context.read<TopPageViewModel>().admobBanner,
+            builder: (context, AsyncSnapshot<Widget> snapshot) {
+              if (snapshot.hasData) {
+                return snapshot.data!;
+              } else if (snapshot.hasError) {
+                // Something to do
+              }
+              return const CircularProgressIndicator();
+            },
+          ),
         BottomNavigationBar(
-          currentIndex: context.select((TopPageState value) => value.pageIndex),
+          currentIndex: pageIndex,
           items: BnbItems.values.map((bnb) => bnb.item).toList(),
           onTap: (int index) {
             final viewModel = context.read<TopPageViewModel>();
