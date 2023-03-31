@@ -1,12 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:intl/intl.dart';
-
-// Project imports:
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -641,6 +635,26 @@ class S {
     return Intl.message(
       'Fear & Greed Index',
       name: 'fearAndGreed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Can I display ads?`
+  String get checkAdmobDisplay {
+    return Intl.message(
+      'Can I display ads?',
+      name: 'checkAdmobDisplay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You need to watch an ad to continue this action.`
+  String get checkAdmobDisplayDetails {
+    return Intl.message(
+      'You need to watch an ad to continue this action.',
+      name: 'checkAdmobDisplayDetails',
       desc: '',
       args: [],
     );

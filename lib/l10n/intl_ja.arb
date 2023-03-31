@@ -57,5 +57,7 @@
     "noInternetConnection":"インターネットに接続できません",
     "errorHasOccurred":"データ取得中にエラーが発生しました",
     "sending":"送信中...",
-    "fearAndGreed":"Fear & Greed Index"
+    "fearAndGreed":"Fear & Greed Index",
+    "checkAdmobDisplay":"広告を表示しますか？",
+    "checkAdmobDisplayDetails":"この操作を続けるには広告の視聴が必要です。"
 }

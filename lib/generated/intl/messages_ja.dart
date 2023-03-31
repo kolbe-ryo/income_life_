@@ -10,7 +10,6 @@
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
-// Package imports:
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
@@ -30,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("キャンセル"),
         "chartTheme": MessageLookupByLibrary.simpleMessage("チャートテーマ"),
         "checkAdding": MessageLookupByLibrary.simpleMessage("ポートフォリオに\n追加しますか？"),
+        "checkAdmobDisplay": MessageLookupByLibrary.simpleMessage("広告を表示しますか？"),
+        "checkAdmobDisplayDetails": MessageLookupByLibrary.simpleMessage("この操作を続けるには広告の視聴が必要です。"),
         "checkCannotUndone": MessageLookupByLibrary.simpleMessage("この操作は元に戻せません"),
         "checkDelete": MessageLookupByLibrary.simpleMessage("削除しますか？"),
         "checkResetAll": MessageLookupByLibrary.simpleMessage("ポートフォリを\nリセットしますか？"),

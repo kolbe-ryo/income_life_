@@ -10,7 +10,6 @@
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
 // ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
-// Package imports:
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
@@ -30,6 +29,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "chartTheme": MessageLookupByLibrary.simpleMessage("Chart Theme"),
         "checkAdding": MessageLookupByLibrary.simpleMessage("Add Your Portfolio?"),
+        "checkAdmobDisplay": MessageLookupByLibrary.simpleMessage("Can I display ads?"),
+        "checkAdmobDisplayDetails":
+            MessageLookupByLibrary.simpleMessage("You need to watch an ad to continue this action."),
         "checkCannotUndone": MessageLookupByLibrary.simpleMessage("This operation cannot be undone"),
         "checkDelete": MessageLookupByLibrary.simpleMessage("Do you want to delete?"),
         "checkResetAll": MessageLookupByLibrary.simpleMessage("Reset All Your Portfolio?"),

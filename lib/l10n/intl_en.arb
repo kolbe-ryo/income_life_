@@ -57,5 +57,7 @@
     "noInternetConnection":"No Internet Connection",
     "errorHasOccurred":"Error has occurred",
     "sending":"Sengind...",
-    "fearAndGreed":"Fear & Greed Index"
+    "fearAndGreed":"Fear & Greed Index",
+    "checkAdmobDisplay":"Can I display ads?",
+    "checkAdmobDisplayDetails":"You need to watch an ad to continue this action."
 }
