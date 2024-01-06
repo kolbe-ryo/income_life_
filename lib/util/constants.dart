@@ -10,7 +10,7 @@ const double kFontSize = 16;
 
 const double kCardHeight = 64;
 
-const String aboutAppUrl = 'https://kolbe-app.site/';
+const String aboutAppUrl = 'https://kolbe-app.tech/';
 
 const String yahooFinanceUrl = 'https://finance.yahoo.com/';
 
